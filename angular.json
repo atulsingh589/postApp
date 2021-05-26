@@ -20,6 +20,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "moment",
+              "@angular/material/**",
+              "validate"
+            ],
             "outputPath": "dist/postListApp",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -38,12 +43,12 @@
             "scripts": [],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json",
-            "aot": false,
+            "aot": true,
             "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
+            "buildOptimizer": true,
+            "sourceMap": false,
+            "optimization": true,
             "namedChunks": true
           },
           "configurations": {
