@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+/*@use "@material/layout-grid/mdc-layout-grid";*/
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+}
+.center
+  {
+    left: 50%;
+    margin-left: -45px;
+    top: 50%;
+    margin-top: -45px;
+    z-index: 9;
+    position: absolute !important;
+  }
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import '~angular-notifier/styles'

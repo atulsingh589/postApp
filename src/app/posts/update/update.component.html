@@ -1,0 +1,51 @@
+<div class="row  justify-content-center py-4">
+    <mat-card>
+        <mat-card-header>
+            <span>Update Post</span>
+            <mat-spinner class="center" *ngIf="progress" color="primary"></mat-spinner>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="row">
+                <mat-form-field class="col-12">
+                    <mat-label> Title</mat-label>
+                    <input name="Title" matInput type="text" placeholder="Title" [(ngModel)]="post.title">
+                </mat-form-field>
+                <mat-form-field class="col-12">
+                    <mat-label> Description</mat-label>
+                    <textarea name="Description" matInput placeholder="Description"
+                        [(ngModel)]="post.description"></textarea>
+                </mat-form-field>
+                <mat-form-field class="col-6">
+                    <mat-label> Schedule Date</mat-label>
+                    <input name="sdate" matInput type="text" [matDatepicker]="sdate" placeholder="Scedule Date"
+                        [(ngModel)]="scheduleDate">
+                    <mat-datepicker-toggle matSuffix [for]="sdate"></mat-datepicker-toggle>
+                    <mat-datepicker #sdate></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="col-6">
+                    <mat-label> Target Date</mat-label>
+                    <input name="tdate" matInput type="text" [matDatepicker]="tdate" placeholder="Target Date"
+                        [(ngModel)]="targetDate">
+                    <mat-datepicker-toggle matSuffix [for]="tdate"></mat-datepicker-toggle>
+                    <mat-datepicker #tdate></mat-datepicker>
+                </mat-form-field>
+                <div class="col-12">
+                    <img [src]="'http://localhost:3000/image/'+post.media.file_id">
+                </div>
+                <div class="col-6">
+                    <input name="file" type="file" class="hide" #fileUpload (change)="uploadFile($event)">
+                    <button mat-raised-button color="primary" (click)="fileUpload.click()">Upload File</button>
+                    {{fileName}}
+                </div>
+                <mat-form-field class="col-6">
+                    <mat-label> Account Detail</mat-label>
+                    <input name="account" matInput type="text" placeholder="Account Detail"
+                        [(ngModel)]="post.accountDetail">
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="primary" (click)="onSubmit()">Update</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

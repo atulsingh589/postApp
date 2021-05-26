@@ -1,0 +1,32 @@
+<div class="row  justify-content-center py-4">
+    <mat-card class="col-12 col-sm-4 col-md-4 col-lg-4 ">
+        <mat-card-header>
+            <span>Sign Up</span>
+            <mat-spinner class="center" *ngIf="progress" color="primary"></mat-spinner>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="row">
+                <mat-form-field class="col-12">
+                    <mat-label> Name</mat-label>
+                    <input name="name" matInput type="text" placeholder="Name" [(ngModel)]="user.name">
+                </mat-form-field>
+                <mat-form-field class="col-12">
+                    <mat-label> Email</mat-label>
+                    <input name="email" matInput type="email" placeholder="Email" [(ngModel)]="user.email">
+                </mat-form-field>
+                <mat-form-field class="col-12">
+                    <mat-label> Username</mat-label>
+                    <input name="username" matInput type="text" placeholder="Username" [(ngModel)]="user.username">
+                </mat-form-field>
+                <mat-form-field class="col-12">
+                    <mat-label> Password</mat-label>
+                    <input name="password" matInput type="password" placeholder="Password" [(ngModel)]="user.password">
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="onSubmit()">SignUp</button>
+            <button mat-raised-button [routerLink]="'/login'" color="accent">Login</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

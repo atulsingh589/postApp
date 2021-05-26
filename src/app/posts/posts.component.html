@@ -1,0 +1,15 @@
+<div class="row justify-content-end">
+    <div class="col-12">
+
+        <button mat-icon-button color="primary" class="right" (click)="deleteAllPosts()"
+            aria-label="Remove Selected Post">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" class="right" (click)="openPostComponent()" aria-label="Add new Post">
+            <mat-icon>post_add</mat-icon>
+        </button>
+
+    </div>
+</div>
+
+<app-list [reload]="reload" [remove]="removeAll"></app-list>
